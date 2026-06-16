@@ -1,0 +1,95 @@
+.al {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: #f6f7fb;
+}
+
+/* Main card */
+.all {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Section blocks */
+.about,
+.service,
+.choose,
+.mission {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Headings */
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2a44;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+/* Paragraph / intro text */
+
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  font-size: 15px;
+  color: #333;
+  padding: 10px 12px;
+  background: #f9fafc;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+/* Hover effect for premium feel */
+li:hover {
+  background: #eef3ff;
+  transform: translateX(4px);
+}
+
+/* Mission highlight box */
+.mission {
+  background: #f3f6ff;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #4a6cf7;
+}
+
+/* Mission text */
+.mission h4 {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .all {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
