@@ -1,15 +1,7 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
+const PORT = process.env.PORT || 8000;
 
-mongoose.connect(process.env.MONGO_URL)
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err))
-const propertySchema = new mongoose.Schema({
-    name: String,
-    img: String,
-    price: String
-});
-const Property = mongoose.model("Property", propertySchema);
 ////////
 const contactSchema = new mongoose.Schema({
     name: String,
@@ -23,7 +15,7 @@ const Contact = mongoose.model("Contact", contactSchema)
 const express = require('express')
 const cors = require ('cors')
 const app = express()
-const PORT = process.env.PORT;
+
 app.use(express.json())
 app.use(cors())
 
@@ -110,6 +102,15 @@ app.put('/AddProperties/:id', async (req,res)=>{
         res.status(500).json({ error: err.message });
     }
 });
+mongoose.connect(process.env.MONGO_URL)
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.log(err))
+const propertySchema = new mongoose.Schema({
+    name: String,
+    img: String,
+    price: String
+});
+const Property = mongoose.model("Property", propertySchema);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log("Server running on", PORT);
